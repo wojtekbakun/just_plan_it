@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:just_plan_it/features/new_task/presentation/widgets/new_task_bottom_sheet.dart';
 
 class NewTaskButton extends StatelessWidget {
   const NewTaskButton({super.key});
@@ -6,8 +7,12 @@ class NewTaskButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
-      tooltip: 'Add new task',
-      onPressed: () {},
+      onPressed: () => showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return const NewTaskBottomSheet();
+        },
+      ),
       label: const Row(
         children: [
           Icon(
