@@ -8,4 +8,12 @@ class TaskController {
   void addTask(TaskModel task) {
     _taskProvider.addTask(task);
   }
+
+  void checkTask(int index) {
+    _taskProvider.toggleDone(index);
+  }
+
+  void deleteTask(int index) {
+    _taskProvider.deleteTask(index);
+  }
 }
